@@ -3,13 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://holicc.github.io/posts/</loc>
-    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://holicc.github.io/2020/03/about-tcp-protocol/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,6 +25,13 @@
   
   <url>
     <loc>https://holicc.github.io/tags/networking/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/posts/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
