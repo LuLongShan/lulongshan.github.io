@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/</link>
     <description>Recent content in Tags on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install Rust On Win10</title>
+      <link>https://holicc.github.io/2020/07/install-rust-win10/</link>
+      <pubDate>Thu, 02 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/install-rust-win10/</guid>
+      <description>安装Rust 直接到Rust官方网站 找到适合自己系统的安装包exe文件下载进行安装就行了 官方提供win32位和64位的安装版本，不过一般都是6</description>
+    </item>
     
     <item>
       <title>MySQL 索引</title>

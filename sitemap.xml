@@ -4,27 +4,55 @@
   
   <url>
     <loc>https://holicc.github.io/categories/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/index/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+    <loc>https://holicc.github.io/2020/07/install-rust-win10/</loc>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/mysql/</loc>
+    <loc>https://holicc.github.io/categories/programing/</loc>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/programing/</loc>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/rust/</loc>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/</loc>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/index/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -38,14 +66,14 @@
   </url>
   
   <url>
-    <loc>https://holicc.github.io/2020/03/about-mysql-index/</loc>
+    <loc>https://holicc.github.io/tags/mysql/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/</loc>
+    <loc>https://holicc.github.io/2020/03/about-mysql-index/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
