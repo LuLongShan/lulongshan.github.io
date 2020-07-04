@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/programing/</link>
     <description>Recent content in programing on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/programing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Variables</title>
+      <link>https://holicc.github.io/2020/07/rust-variable/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-variable/</guid>
+      <description>Rust中的变量与常量的定义 Rust中定义变量使用的关键字是 let 关键字，该关键字定义的变量是不可变的;想要定义一个可变的变量需要再使用一个关键</description>
+    </item>
     
     <item>
       <title>Install Rust On Win10</title>
