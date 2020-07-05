@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Rust Function</title>
+      <link>https://holicc.github.io/2020/07/rust-function/</link>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-function/</guid>
+      <description>Rust中的函数 Rust是支持函数编程的，不像Java完全是使用面向对象的编程语言，虽然可以使用Function等，但是还是有些差距的。 Ru</description>
+    </item>
+    
+    <item>
       <title>Rust Variables</title>
       <link>https://holicc.github.io/2020/07/rust-variable/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
