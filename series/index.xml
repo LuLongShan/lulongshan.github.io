@@ -12,7 +12,7 @@
     <item>
       <title>Rust Data Types</title>
       <link>https://holicc.github.io/2020/07/rust-data-types/</link>
-      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holicc.github.io/2020/07/rust-data-types/</guid>
       <description>Rust中的数据类型 Rust是一门静态类型的语言(跟Java一样)，每一个值都有其对应的数据类型(Every value in Rust is of a certain data type) Number Types Rust作</description>
@@ -21,7 +21,7 @@
     <item>
       <title>Rust Function</title>
       <link>https://holicc.github.io/2020/07/rust-function/</link>
-      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holicc.github.io/2020/07/rust-function/</guid>
       <description>Rust中的函数 Rust是支持函数编程的，不像Java完全是使用面向对象的编程语言，虽然可以使用Function等，但是还是有些差距的。 Ru</description>
