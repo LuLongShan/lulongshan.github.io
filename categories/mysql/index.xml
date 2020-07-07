@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Rust Reference And Borrowing</title>
+      <link>https://holicc.github.io/2020/07/rust-references-and-borrowing/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-references-and-borrowing/</guid>
+      <description>Rust中的引用(Reference)与借用(Borrowing) 在上一节的所有权系统的最后，官方抛出了一个问题，就是在函数使用的时候，如果</description>
+    </item>
+    
+    <item>
       <title>Rust Function</title>
       <link>https://holicc.github.io/2020/07/rust-ownership/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
