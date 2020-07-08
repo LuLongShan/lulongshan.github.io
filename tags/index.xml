@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/</link>
     <description>Recent content in Tags on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Struct</title>
+      <link>https://holicc.github.io/2020/07/rust-struct/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-struct/</guid>
+      <description>通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&amp;quot;someone@example.com&amp;quot;), username: String::from(&amp;quot;someusername123&amp;quot;), active: true, sign_in_count: 1, }; } struct与Ja</description>
+    </item>
     
     <item>
       <title>Rust Reference And Borrowing</title>

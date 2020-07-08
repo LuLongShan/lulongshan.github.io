@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Joe</title>
+        Rust Struct - Joe
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,11 +23,10 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&amp;quot;someone@example.com&amp;quot;), username: String::from(&amp;quot;someusername123&amp;quot;), active: true, sign_in_count: 1, }; } struct与Ja" />
   <meta name="generator" content="Hugo 0.62.2 with theme pure" />
-  <title>Joe</title>
+  <title>Rust Struct - Joe</title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://holicc.github.io/tags/tcp/index.xml" title="Joe" />
   
   <link rel="stylesheet" href="https://holicc.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,15 +43,23 @@
     integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js"
     integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
-  <meta property="og:title" content="tcp" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://holicc.github.io/tags/tcp/" />
-<meta property="og:updated_time" content="2020-03-22T00:00:00+00:00" />
-<meta itemprop="name" content="tcp">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="tcp"/>
-<meta name="twitter:description" content=""/>
+  <meta property="og:title" content="Rust Struct" />
+<meta property="og:description" content="通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&quot;someone@example.com&quot;), username: String::from(&quot;someusername123&quot;), active: true, sign_in_count: 1, }; } struct与Ja" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://holicc.github.io/2020/07/rust-struct/" />
+<meta property="article:published_time" content="2020-07-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-08T00:00:00+00:00" />
+<meta itemprop="name" content="Rust Struct">
+<meta itemprop="description" content="通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&quot;someone@example.com&quot;), username: String::from(&quot;someusername123&quot;), active: true, sign_in_count: 1, }; } struct与Ja">
+<meta itemprop="datePublished" content="2020-07-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="643">
+
+
+
+<meta itemprop="keywords" content="programing,rust," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rust Struct"/>
+<meta name="twitter:description" content="通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&quot;someone@example.com&quot;), username: String::from(&quot;someusername123&quot;), active: true, sign_in_count: 1, }; } struct与Ja"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -256,43 +264,236 @@
 
     
     
-<main class="main" role="main">
-    <article class="content article article-tags post-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">tcp</h1>
-            <p class="text-muted hidden-xs">Total 6 tags</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="https://holicc.github.io/tags">All</a></li>
-                    <li><a href="https://holicc.github.io/tags/index/">index</a></li>
-                    <li><a href="https://holicc.github.io/tags/mysql/">mysql</a></li>
-                    <li><a href="https://holicc.github.io/tags/networking/">networking</a></li>
-                    <li><a href="https://holicc.github.io/tags/programing/">programing</a></li>
-                    <li><a href="https://holicc.github.io/tags/rust/">rust</a></li>
-                    <li><a href="https://holicc.github.io/tags/tcp/">tcp</a></li>
-                </ul>
-            </nav>
-        </header>
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/07/rust-struct/"
+    >Rust Struct</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-03-22 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-03-22</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://holicc.github.io/2020/03/about-tcp-protocol/">About TCP Protocol</a>
-        </h3>
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://holicc.github.io/2020/07/rust-struct/" class="article-date">
+  <time datetime="2020-07-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-08</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/programing/"> programing </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/programing/"> programing </a>
+    <a class="article-tag-link" href="/tags/rust/"> rust </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-struct/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 643words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </div>
     </div>
-    <div class="panel-footer">
-        <a href="https://holicc.github.io/tags/networking" class="label label-default mb">networking</a>
-        <a href="https://holicc.github.io/tags/tcp" class="label label-default mb">tcp</a>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>通过使用关键<code>struct</code>可以定义一个类，呸，是定义一个结构体。</p>
+
+<pre><code class="language-rust">struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+fn main() {
+    let user1 = User {
+        email: String::from(&quot;someone@example.com&quot;),
+        username: String::from(&quot;someusername123&quot;),
+        active: true,
+        sign_in_count: 1,
+    };
+}
+</code></pre>
+
+<p><code>struct</code>与Java中的类是不同的两种数据结构，具体的使用方式也有所不同。</p>
+
+<pre><code class="language-rust">fn build_user(email: String, username: String) -&gt; User {
+    User {
+        email: email,
+        username: username,
+        active: true,
+        sign_in_count: 1,
+    }
+}
+</code></pre>
+
+<p>有一个算是语法糖的功能就是,结构体复用;使用<code>..</code>符号能够复用一个已经创建好的结构中的字段;</p>
+
+<pre><code class="language-rust">struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+
+fn main() {
+    let user1 = User {
+        email: String::from(&quot;someone@example.com&quot;),
+        username: String::from(&quot;someusername123&quot;),
+        active: true,
+        sign_in_count: 1,
+    };
+
+    let user2 = User {
+        email: String::from(&quot;another@example.com&quot;),
+        username: String::from(&quot;anotherusername567&quot;),
+        ..user1
+    };
+}
+</code></pre>
+
+<p>也可以定义一种类似Java中<code>Record</code>的数据结构</p>
+
+<pre><code class="language-rust">fn main() {
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);     
+    let origin = Point(0, 0, 0);
+}
+</code></pre>
+
+<p>看起来虽然跟Golang没什么太大的区别,但是加上了所有权之后就有了一些限制;</p>
+
+<pre><code class="language-rust">struct User {
+    username: &amp;str,
+    email: &amp;str,
+    sign_in_count: u64,
+    active: bool,
+}
+
+fn main() {
+    let user1 = User {
+        email: &quot;someone@example.com&quot;,
+        username: &quot;someusername123&quot;,
+        active: true,
+        sign_in_count: 1,
+    };
+}     
+</code></pre>
+
+<p>这是Rust团队深思熟虑过后的设计,为了能够让struct的实例能够拥有成员变量的所有权</p>
+
+<blockquote>
+<p>In the User struct definition in Listing 5-1, we used the owned String type rather than the &amp;str string slice type. This is a deliberate choice because we want instances of this struct to own all of its data and for that data to be valid for as long as the entire struct is valid.</p>
+</blockquote>
+
+<p>不懂的是为什么这里username使用了<code>&amp;str</code>就没有了username成员变量的所有权?</p>
+
+<p>难道是因为<code>&amp;str</code>是一个<code>slice</code>类型? slice就是一中没有所有权的数据类型.</p>
+
+<blockquote>
+<p>Another data type that does not have ownership is the slice</p>
+</blockquote>
+
+<p>好像是这样的,可以的,Rust强(吹)!</p>
+
+<p>想要像在Java中一样自由的打印对象,需要在struct上进行一些特殊处理,相当于需要实现一个<code>toString()</code>方法一样.</p>
+
+<pre><code class="language-rust">#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(&quot;rect1 is {:?}&quot;, rect1);
+}
+</code></pre>
+
+<p>完(有点水了)!</p>
+
     </div>
-</article>
-            </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://holicc.github.io/2020/07/rust-struct/" title="Rust Struct" target="_blank" rel="external">https://holicc.github.io/2020/07/rust-struct/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/LuLongShan" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://holicc.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/LuLongShan" target="_blank"><span class="text-dark">Joe</span><small class="ml-1x">Hello World</small></a></h3>
+        <div>people are resources</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://holicc.github.io/2020/07/rust-references-and-borrowing/" title="Rust Reference And Borrowing"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
         </div>
-    </article>
+    </div>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/LuLongShan" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -369,6 +570,19 @@
         
         hasInnerContainers: true,
     });
+</script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https:\/\/holicc.github.io\/2020\/07\/rust-struct\/';
+        this.page.identifier = 'takijoe';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//' + 'takijoe' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 
 <script type="application/javascript">
