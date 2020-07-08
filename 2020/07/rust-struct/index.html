@@ -53,7 +53,7 @@
 <meta itemprop="description" content="通过使用关键struct可以定义一个类，呸，是定义一个结构体。 struct User { username: String, email: String, sign_in_count: u64, active: bool, } fn main() { let user1 = User { email: String::from(&quot;someone@example.com&quot;), username: String::from(&quot;someusername123&quot;), active: true, sign_in_count: 1, }; } struct与Ja">
 <meta itemprop="datePublished" content="2020-07-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="643">
+<meta itemprop="wordCount" content="1270">
 
 
 
@@ -305,8 +305,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-struct/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 643words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1270words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -429,7 +429,91 @@ fn main() {
 }
 </code></pre>
 
-<p>完(有点水了)!</p>
+<p>由于Rust是一门拥有面向对象和函数编程的语言，所以在Rust中可以对<code>struct</code>对象定义所属的方法
+其中使用了<code>impl</code>和<code>self</code>关键字，语义上还是能够理解的。</p>
+
+<pre><code class="language-rust">#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(
+        &quot;The area of the rectangle is {} square pixels.&quot;,
+        rect1.area()
+    );
+}
+</code></pre>
+
+<p>本来以为挺简单的，但是结合上了所有权系统一切都变得复杂了；</p>
+
+<blockquote>
+<p>We’ve chosen &amp;self here for the same reason we used &amp;Rectangle in the function version: we don’t want to take ownership, and we just want to read the data in the struct, not write to it. If we wanted to change the instance that we’ve called the method on as part of what the method does, we’d use &amp;mut self as the first parameter. Having a method that takes ownership of the instance by using just self as the first parameter is rare; this technique is usually used when the method transforms self into something else and you want to prevent the caller from using the original instance after the transformation.</p>
+</blockquote>
+
+<pre><code class="language-rust">fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+}
+</code></pre>
+
+<p>这个方法始终保持了类型函数的意思,这里的<code>self</code>其实就是函数中的<code>Rectangle</code>相当于<strong>move</strong> ，加上<code>&amp;</code>后就是<strong>Borrowing</strong>。当方法需要修改struct实例的中的属性的时候就需要使用<code>&amp;mut self</code>,当需要所有权移交的时候就使用<code>self</code>;</p>
+
+<p>原来如此，也没有想象的那么复杂（可能吧）。</p>
+
+<p>把函数放到<strong>Impl</strong>块中叫做<strong>关联函数</strong><code>associated functions</code>相当于Java中的静态方法,通过struct直接调用,就像<code>String::from()</code></p>
+
+<p>Rust也允许定义对同一个struct多个<strong>Impl</strong>块</p>
+
+<pre><code class="language-rust">#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+}
+
+impl Rectangle {
+    fn can_hold(&amp;self, other: &amp;Rectangle) -&gt; bool {
+        self.width &gt; other.width &amp;&amp; self.height &gt; other.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+
+    println!(&quot;Can rect1 hold rect2? {}&quot;, rect1.can_hold(&amp;rect2));
+    println!(&quot;Can rect1 hold rect3? {}&quot;, rect1.can_hold(&amp;rect3));
+}
+</code></pre>
+
+<p>完!</p>
 
     </div>
     <div class="article-footer">
