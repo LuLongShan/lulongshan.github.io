@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Rust Function - Joe
+        Rust Enums And Patter Match - Joe
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,9 +23,9 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="Rust中的所有权系统(Ownership) 目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制" />
+  <meta name="description" content="Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:" />
   <meta name="generator" content="Hugo 0.62.2 with theme pure" />
-  <title>Rust Function - Joe</title>
+  <title>Rust Enums And Patter Match - Joe</title>
   
   
   <link rel="stylesheet" href="https://holicc.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
@@ -43,23 +43,23 @@
     integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js"
     integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
-  <meta property="og:title" content="Rust Function" />
-<meta property="og:description" content="Rust中的所有权系统(Ownership) 目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制" />
+  <meta property="og:title" content="Rust Enums And Patter Match" />
+<meta property="og:description" content="Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://holicc.github.io/2020/07/rust-ownership/" />
-<meta property="article:published_time" content="2020-07-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-07-06T00:00:00+00:00" />
-<meta itemprop="name" content="Rust Function">
-<meta itemprop="description" content="Rust中的所有权系统(Ownership) 目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制">
-<meta itemprop="datePublished" content="2020-07-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2298">
+<meta property="og:url" content="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" />
+<meta property="article:published_time" content="2020-07-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-09T00:00:00+00:00" />
+<meta itemprop="name" content="Rust Enums And Patter Match">
+<meta itemprop="description" content="Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:">
+<meta itemprop="datePublished" content="2020-07-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="604">
 
 
 
 <meta itemprop="keywords" content="programing,rust," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Rust Function"/>
-<meta name="twitter:description" content="Rust中的所有权系统(Ownership) 目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制"/>
+<meta name="twitter:title" content="Rust Enums And Patter Match"/>
+<meta name="twitter:description" content="Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -280,8 +280,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/07/rust-ownership/"
-    >Rust Function</a
+    href="/2020/07/rust-enums-and-patter-match/"
+    >Rust Enums And Patter Match</a
   >
 </h1>
 
@@ -289,8 +289,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://holicc.github.io/2020/07/rust-ownership/" class="article-date">
-  <time datetime="2020-07-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-06</time>
+<a href="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" class="article-date">
+  <time datetime="2020-07-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-09</time>
 </a>
 </span>
 <span class="article-category">
@@ -303,210 +303,189 @@
     <a class="article-tag-link" href="/tags/rust/"> rust </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-ownership/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-enums-and-patter-match/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2298words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 5minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 604words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h3 id="rust中的所有权系统ownership">Rust中的所有权系统(Ownership)</h3>
+      <h3 id="rust中的枚举">Rust中的枚举</h3>
 
-<p>目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制内存的分配(像C或C++)
-然而Rust不一样，另辟蹊径，靠的是编译器来保证内存的分配和回收。也叫做<code>Ownership</code>,这一概念是在Rust中独有的，是Rust独有的特性之一。如何看待这一特性，就是仁者见仁智者见智了，对于一个Java程序员来说，这一特性彷佛没有那么好，反而有点让人接受不了(可能是因为Rust是一门系统级别的编程语言，比较注重性能和安全性)</p>
-
-<blockquote>
-<p>memory is managed through a system of ownership with a set of rules that the compiler checks at compile time. None of the ownership features slow down your program while it’s running.</p>
-</blockquote>
-
-<p>要明白所有权系统，要先对<strong>堆栈</strong>有基本的认识。</p>
-
-<blockquote>
-<p>All data stored on the stack must have a known, fixed size. Data with an unknown size at compile time or a size that might change must be stored on the heap instead</p>
-</blockquote>
-
-<p>这个点不知道，记录一下</p>
-
-<blockquote>
-<p>When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.</p>
-</blockquote>
-
-<p>函数中的局部变量是分配在栈上的，每当函数调用完成，变量也已经被弹出栈顶了。</p>
-
-<p>官方文档也总结的很到位</p>
-
-<blockquote>
-<p>Keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so you don’t run out of space are all problems that ownership addresses. Once you understand ownership, you won’t need to think about the stack and the heap very often, but knowing that managing heap data is why ownership exists can help explain why it works the way it does.</p>
-</blockquote>
-
-<p>所有权系统主要是为了帮助你更好的管理变量在堆栈上的分配。系统级别的编程语言比较在变量是分配到堆还是栈上，对于使用Java的我来说，对与这个概念是相当模糊的，只是大概知道Java中的对象大部分都是分配到堆上的，而且GC也是针对堆上的对象进行的回收。
-为此顺便学习一下Java方面的知识吧。</p>
-
-<p>JVM规范让每个Java线程拥有自己的独立的JVM栈，也就是Java方法的调用栈。</p>
-
-<p>JVM里的“堆”（heap）特指用于存放Java对象的内存区域。所以根据这个定义，Java对象全部都在堆上</p>
-
-<p>要注意，这个“堆”并不是数据结构意义上的堆（Heap (data structure)，一种有序的树），而是动态内存分配意义上的堆——用于管理动态生命周期的内存区域。</p>
-
-<p>JVM的堆被同一个JVM实例中的所有Java线程共享。它通常由某种自动内存管理机制所管理，这种机制通常叫做“垃圾回收”（garbage collection，GC）。JVM规范并不强制要求JVM实现采用哪种GC算法。</p>
-
-<p>好了，回到Rust中的所有权系统。</p>
-
-<p>所有权系统需要熟知一下三条规则：</p>
-
-<ul>
-<li>Each value in Rust has a variable that’s called its owner(每一变量都有其拥有者//不知道这样翻译对不对 - -).</li>
-<li>There can only be one owner at a time.(同一时刻一个变量只能有一个拥有者)</li>
-<li>When the owner goes out of scope, the value will be dropped.(当拥有者不在作用域中了，那么这个值就会被释放掉)</li>
-</ul>
-
-<p>规则比我想象的要简单明了许多，看上去很简洁，实际上却饱含了很多信息量。。。</p>
-
-<p>其中提到了<em>scope</em>(作用域)这个概念，有点类似于Spring中的scope的样子或者http中的session作用域和request作用域。</p>
-
-<p>官方给的例子还是很容易理解的</p>
+<p><code>enum</code>枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了.</p>
 
 <pre><code class="language-rust">fn main() {
-    {                      // s is not valid here, it’s not yet declared
-        let s = &quot;hello&quot;;   // s is valid from this point forward
+    enum IpAddrKind {
+        V4,
+        V6,
+    }
 
-        // do stuff with s
-    }                      // this scope is now over, and s is no longer valid
+    struct IpAddr {
+        kind: IpAddrKind,
+        address: String,
+    }
+
+    let home = IpAddr {
+        kind: IpAddrKind::V4,
+        address: String::from(&quot;127.0.0.1&quot;),
+    };
+
+    let loopback = IpAddr {
+        kind: IpAddrKind::V6,
+        address: String::from(&quot;::1&quot;),
+    };
 }
 </code></pre>
 
-<p>有一点特殊的是<code>String</code>和<code>literal</code></p>
+<p>枚举类中也可以有成员变量</p>
 
-<p>在IDEA的提示下发现这是两种不同的类型，然儿在Java中都是统一的<strong>String</strong></p>
+<pre><code class="language-rust">fn main() {
+    enum IpAddr {
+        V4(String),
+        V6(String),
+    }
 
-<p><figure><img src="str.png" alt="str-in-rust"></figure></p>
+    let home = IpAddr::V4(String::from(&quot;127.0.0.1&quot;));
 
-<p>原因是因为<code>literal</code>是固定长度的不可变的，分配在栈上的数据结构。而<code>String</code>是跟Java中的String类型一样是可变的。</p>
+    let loopback = IpAddr::V6(String::from(&quot;::1&quot;));
+}
+</code></pre>
 
-<p>同为String类型但是有点不同的是。</p>
+<p>不仅如此，枚举类中的成员还可以拥有不同的类型；</p>
 
-<p>Java中的String可以这样写</p>
+<pre><code class="language-rust">fn main() {
+    enum IpAddr {
+        V4(u8, u8, u8, u8),
+        V6(String),
+    }
+
+    let home = IpAddr::V4(127, 0, 0, 1);
+
+    let loopback = IpAddr::V6(String::from(&quot;::1&quot;));
+}
+</code></pre>
+
+<p>甚至还可以放置匿名结构体</p>
+
+<pre><code class="language-rust">enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+</code></pre>
+
+<p>其中的<code>Move</code>就是定义的匿名结构体.</p>
+
+<p>后面就讲了一下<code>Option</code>,这个Java1.8以后也有的东西，所以还是很熟悉的，只是在Rust中它使用一个枚举类型；</p>
+
+<p>用法和Java都类似的.</p>
+
+<p>rust版本</p>
+
+<pre><code class="language-rust">fn main() {
+    let a: Option&lt;i32&gt; = None;
+
+    let c = a.expect(&quot;error message &quot;);
+
+    println!(&quot;hello world {}&quot;, c)
+}
+</code></pre>
+
+<p>java版本</p>
 
 <pre><code class="language-java">class Scratch {
-    public static void main(String[] args) {
-        String a = &quot;a&quot;;
-        String b = a;
-        a += &quot;zxc&quot;;
-        System.out.println(a + &quot; &quot; + b);
+    public static void main(String[] args) throws Exception {
+        String a=&quot;asd&quot;;
+        Optional.ofNullable(a).orElseThrow(()-&gt;new Exception(&quot;zxc&quot;));
     }
 }
 </code></pre>
 
-<p>然而在Rust中这却不能这样</p>
+<p>神奇的<code>match</code>模式匹配？可惜在Scala中就已经见过了，感觉没啥好学习的。</p>
 
-<pre><code class="language-rust">fn main() {
-    let s1 = String::from(&quot;hello&quot;);
-    // let s2 = s1; 编译不通过
+<pre><code class="language-rust">#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+    // --snip--
+}
 
-    println!(&quot;{}, world!&quot;, s1);
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState),
+}
+
+fn value_in_cents(coin: Coin) -&gt; u8 {
+    match coin {
+        Coin::Penny =&gt; 1,
+        Coin::Nickel =&gt; 5,
+        Coin::Dime =&gt; 10,
+        Coin::Quarter(state) =&gt; {
+            println!(&quot;State quarter from {:?}!&quot;, state);
+            25
+        }
+    }
+}
+
+fn main() {
+    value_in_cents(Coin::Quarter(UsState::Alaska));
 }
 </code></pre>
 
-<p>原因是因为Rust中是<code>s2</code>并没有对<code>s1</code>进行值拷贝，传递的是<code>s1</code>的指针。根据官方的解释，这里涉及到了 <strong>浅拷贝</strong>和<strong>深拷贝</strong></p>
-
-<blockquote>
-<p>If you’ve heard the terms shallow copy and deep copy while working with other languages, the concept of copying the pointer, length, and capacity without copying the data probably sounds like making a shallow copy. But because Rust also invalidates the first variable, instead of being called a shallow copy, it’s known as a move. In this example, we would say that s1 was moved into s2.</p>
-</blockquote>
-
-<p>Rust并没有隐式的进行<strong>浅拷贝</strong>操作。而是让<code>s1</code>失效，这样的操作叫做 <code>moved</code>,相当于把<code>s1</code>上的值的指针移动到了<code>s2</code>上这样 <code>s1</code>就失效了。
-为什么要这样做可能是为了能够更好的追踪内存并回收吧。</p>
-
-<p>如果要使用<code>深拷贝</code>,就要使用<code>clone</code>方法。该方法会对堆和栈上的所有内容进行拷贝。</p>
+<p>最后这个<code>if let</code>表达式让我有点懵逼，咋一看感觉没啥用啊。</p>
 
 <pre><code class="language-rust">fn main() {
-    let s1 = String::from(&quot;hello&quot;);
-    let s2 = s1.clone();
-
-    println!(&quot;s1 = {}, s2 = {}&quot;, s1, s2);
+    let some_u8_value = Some(0u8);
+    match some_u8_value {
+        Some(3) =&gt; println!(&quot;three&quot;),
+        _ =&gt; (),
+    }
 }
 </code></pre>
 
-<p>在有些地方，跟Java类似，对于基本的数据类型，都不需要使用显示的使用<code>clone</code>方法</p>
+<p>加个<code>let</code>有啥用呢？还不如直接写成<code>if-else</code>的形式就行了嘛？</p>
 
 <pre><code class="language-rust">fn main() {
-    let x = 5;
-    let y = x;
-
-    println!(&quot;x = {}, y = {}&quot;, x, y);
+    let some_u8_value = Some(0u8);
+    if let Some(3) = some_u8_value {
+        println!(&quot;three&quot;);
+    }
 }
 </code></pre>
 
-<p>在Rust中所有都遵循所有权系统的规则</p>
+<p>可能为了能够将变量绑定到一个类型里面把，形如：</p>
 
-<p>在函数中，传递进去的参数也是所有权移交的一种方式</p>
-
-<pre><code class="language-rust">fn main() {
-    let s = String::from(&quot;hello&quot;);  // s comes into scope
-
-    takes_ownership(s);             // s's value moves into the function...
-                                    // ... and so is no longer valid here
-
-    let x = 5;                      // x comes into scope
-
-    makes_copy(x);                  // x would move into the function,
-                                    // but i32 is Copy, so it’s okay to still
-                                    // use x afterward
-
-} // Here, x goes out of scope, then s. But because s's value was moved, nothing
-  // special happens.
-
-fn takes_ownership(some_string: String) { // some_string comes into scope
-    println!(&quot;{}&quot;, some_string);
-} // Here, some_string goes out of scope and `drop` is called. The backing
-  // memory is freed.
-
-fn makes_copy(some_integer: i32) { // some_integer comes into scope
-    println!(&quot;{}&quot;, some_integer);
-} // Here, some_integer goes out of scope. Nothing special happens.
-</code></pre>
-
-<p>返回值中就更好理解了</p>
-
-<pre><code class="language-rust">fn main() {
-    let s1 = gives_ownership();         // gives_ownership moves its return
-                                        // value into s1
-
-    let s2 = String::from(&quot;hello&quot;);     // s2 comes into scope
-
-    let s3 = takes_and_gives_back(s2);  // s2 is moved into
-                                        // takes_and_gives_back, which also
-                                        // moves its return value into s3
-} // Here, s3 goes out of scope and is dropped. s2 goes out of scope but was
-  // moved, so nothing happens. s1 goes out of scope and is dropped.
-
-fn gives_ownership() -&gt; String {             // gives_ownership will move its
-                                             // return value into the function
-                                             // that calls it
-
-    let some_string = String::from(&quot;hello&quot;); // some_string comes into scope
-
-    some_string                              // some_string is returned and
-                                             // moves out to the calling
-                                             // function
+<pre><code class="language-rust">#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+    // --snip--
 }
 
-// takes_and_gives_back will take a String and return one
-fn takes_and_gives_back(a_string: String) -&gt; String { // a_string comes into
-                                                      // scope
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState),
+}
 
-    a_string  // a_string is returned and moves out to the calling function
+fn main() {
+    let coin = Coin::Penny;
+    let mut count = 0;
+    if let Coin::Quarter(state) = coin {
+        println!(&quot;State quarter from {:?}!&quot;, state);
+    } else {
+        count += 1;
+    }
 }
 </code></pre>
 
-<p>所有权系统就像是给每一个变量进行了一个轨迹追踪一样。这样的话写代码感觉会更加清晰明了，但是阅读起来可能有点难受吧？</p>
+<p>是为了简化<code>match</code>操作而创建的语法糖.</p>
 
-<p>总体来说还是不错的设计。</p>
-
-<p>完！</p>
-
-<h3 id="参考">参考</h3>
-
-<p><a href="https://www.zhihu.com/question/29833675">Java虚拟机的堆、栈、堆栈如何去理解？ RednaxelaFX大佬解答</a></p>
+<p>完!</p>
 
     </div>
     <div class="article-footer">
@@ -514,7 +493,7 @@ fn takes_and_gives_back(a_string: String) -&gt; String { // a_string comes into
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://holicc.github.io/2020/07/rust-ownership/" title="Rust Function" target="_blank" rel="external">https://holicc.github.io/2020/07/rust-ownership/</a>
+      <a href="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" title="Rust Enums And Patter Match" target="_blank" rel="external">https://holicc.github.io/2020/07/rust-enums-and-patter-match/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -549,14 +528,9 @@ fn takes_and_gives_back(a_string: String) -&gt; String { // a_string comes into
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://holicc.github.io/2020/07/rust-data-types/" title="Rust Data Types"><i
+                <a href="https://holicc.github.io/2020/07/rust-struct/" title="Rust Struct"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://holicc.github.io/2020/07/rust-references-and-borrowing/"
-                    title="Rust Reference And Borrowing"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">
@@ -656,7 +630,7 @@ fn takes_and_gives_back(a_string: String) -&gt; String { // a_string comes into
 
 <script>
     var disqus_config = function () {
-        this.page.url = 'https:\/\/holicc.github.io\/2020\/07\/rust-ownership\/';
+        this.page.url = 'https:\/\/holicc.github.io\/2020\/07\/rust-enums-and-patter-match\/';
         this.page.identifier = 'takijoe';
     };
     (function () {

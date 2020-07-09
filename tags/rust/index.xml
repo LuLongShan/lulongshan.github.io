@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/rust/</link>
     <description>Recent content in rust on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Enums And Patter Match</title>
+      <link>https://holicc.github.io/2020/07/rust-enums-and-patter-match/</link>
+      <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-enums-and-patter-match/</guid>
+      <description>Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:</description>
+    </item>
     
     <item>
       <title>Rust Struct</title>
