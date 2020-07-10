@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Joe</title>
+        Rust Packages Management - Joe
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,11 +23,10 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="Rust Packages Crates and Modules 每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是cargo作为其包管理工具； crate是一个单一的库" />
   <meta name="generator" content="Hugo 0.62.2 with theme pure" />
-  <title>Joe</title>
+  <title>Rust Packages Management - Joe</title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://holicc.github.io/posts/index.xml" title="Joe" />
   
   <link rel="stylesheet" href="https://holicc.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,15 +43,23 @@
     integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js"
     integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
-  <meta property="og:title" content="About TCP Protocol" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://holicc.github.io/posts/" />
-<meta property="og:updated_time" content="2020-03-22T00:00:00+00:00" />
-<meta itemprop="name" content="About TCP Protocol">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About TCP Protocol"/>
-<meta name="twitter:description" content=""/>
+  <meta property="og:title" content="Rust Packages Management" />
+<meta property="og:description" content="Rust Packages Crates and Modules 每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是cargo作为其包管理工具； crate是一个单一的库" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://holicc.github.io/2020/07/rust-packages-management/" />
+<meta property="article:published_time" content="2020-07-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-10T00:00:00+00:00" />
+<meta itemprop="name" content="Rust Packages Management">
+<meta itemprop="description" content="Rust Packages Crates and Modules 每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是cargo作为其包管理工具； crate是一个单一的库">
+<meta itemprop="datePublished" content="2020-07-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="755">
+
+
+
+<meta itemprop="keywords" content="programing,rust," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rust Packages Management"/>
+<meta name="twitter:description" content="Rust Packages Crates and Modules 每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是cargo作为其包管理工具； crate是一个单一的库"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -256,63 +264,245 @@
 
     
     
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
 
-<main class="main" role="main">
-    <article class="content article article-archives article-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="title">About TCP Protocol</h1>
-            <p class="text-muted">Total 11 articles</p>
-        </header>
-        <div class="article-body">
-                        <section class="panel panel-default b-no">
-                            <div class="panel-heading" role="tab">
-                                <h3 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-                                        <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-                                        &nbsp;2020
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel"
-                                aria-labelledby="heading2020">
-                                <div class="panel-body">
-                                    <div class="collection"><a href="https://holicc.github.io/2020/07/rust-packages-management/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-10 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-10
-    </time>Rust Packages Management
-</a><a href="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-09 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-09
-    </time>Rust Enums And Patter Match
-</a><a href="https://holicc.github.io/2020/07/rust-struct/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-08 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-08
-    </time>Rust Struct
-</a><a href="https://holicc.github.io/2020/07/rust-references-and-borrowing/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-07 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-07
-    </time>Rust Reference And Borrowing
-</a><a href="https://holicc.github.io/2020/07/rust-ownership/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-06 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-06
-    </time>Rust Function
-</a><a href="https://holicc.github.io/2020/07/rust-data-types/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-05 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-05
-    </time>Rust Data Types
-</a><a href="https://holicc.github.io/2020/07/rust-function/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-05 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-05
-    </time>Rust Function
-</a><a href="https://holicc.github.io/2020/07/rust-variable/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-03 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-03
-    </time>Rust Variables
-</a><a href="https://holicc.github.io/2020/07/install-rust-win10/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-07-02 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-07-02
-    </time>Install Rust On Win10
-</a><a href="https://holicc.github.io/2020/03/about-mysql-index/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-03-29 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-03-29
-    </time>MySQL 索引
-</a><a href="https://holicc.github.io/2020/03/about-tcp-protocol/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-03-22 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-03-22
-    </time>About TCP Protocol
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/07/rust-packages-management/"
+    >Rust Packages Management</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://holicc.github.io/2020/07/rust-packages-management/" class="article-date">
+  <time datetime="2020-07-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-10</time>
 </a>
-        </div></div></div></section>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/programing/"> programing </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/programing/"> programing </a>
+    <a class="article-tag-link" href="/tags/rust/"> rust </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-packages-management/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 755words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="rust-packages-crates-and-modules">Rust Packages Crates and Modules</h2>
+
+<p>每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是<code>cargo</code>作为其包管理工具；</p>
+
+<p><code>crate</code>是一个单一的库的意思;</p>
+
+<blockquote>
+<p>A crate is a binary or library. The crate root is a source file that the Rust compiler starts from and makes up the root module of your crate</p>
+</blockquote>
+
+<p><code>package</code>是一个包的意思，一个包可以包含有多个<code>crate</code>;
+其中包含一个 <em><code>Cargo.toml</code></em>文件，这个文件相当于maven项目中的pom.xml文件一样的功能；</p>
+
+<blockquote>
+<p>A package is one or more crates that provide a set of functionality. A package contains a Cargo.toml file that describes how to build those crates.</p>
+</blockquote>
+
+<p>模块管理，通过使用<em>module</em>来管理函数，是函数能够分到对应的模块中，并再其他地方能够使用他们；有点类似Java的<strong>包</strong>空间；</p>
+
+<pre><code class="language-rust">mod front_of_house {
+    mod hosting {
+        fn add_to_waitlist() {}
+
+        fn seat_at_table() {}
+    }
+
+    mod serving {
+        fn take_order() {}
+
+        fn serve_order() {}
+
+        fn take_payment() {}
+    }
+}
+</code></pre>
+
+<p>看了上面的例子我发现，Rust中的关键字定义都使用是三个字母....</p>
+
+<p>在Rust中crate分为<em>binary</em>和<em>library</em>,binary文件就是对应的<em>main.rs</em>而library对应的是<em>lib.rs</em> 他们都是<code>crate roots</code></p>
+
+<p>引入并使用模块中的函数，使用的是<code>paths</code>来定义,可以使用绝对路径和相对路径；</p>
+
+<pre><code class="language-rust">mod front_of_house {
+    mod hosting {
+        fn add_to_waitlist() {}
+    }
+}
+
+pub fn eat_at_restaurant() {
+    // Absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // Relative path
+    front_of_house::hosting::add_to_waitlist();
+}
+</code></pre>
+
+<p><code>pub</code>关键字用来提供函数的访问权限，相当与Java中的<code>public\private\proctect</code></p>
+
+<p><code>super</code>关键字类似与相对路径的功能,有啥区别呢？不知道。。。</p>
+
+<pre><code class="language-rust">fn serve_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        super::serve_order();
+    }
+
+    fn cook_order() {}
+}
+</code></pre>
+
+<p>好了下面介绍一下<code>import</code>关键字，呸，是<code>use</code></p>
+
+<pre><code class="language-rust">mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+use crate::front_of_house::hosting::add_to_waitlist;
+
+pub fn eat_at_restaurant() {
+    add_to_waitlist();
+    add_to_waitlist();
+    add_to_waitlist();
+}
+</code></pre>
+
+<p>21世纪的编程语言都带有引包别名的功能 <code>as</code></p>
+
+<pre><code class="language-rust">#![allow(unused_variables)]
+fn main() {
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -&gt; Result {
+    // --snip--
+    Ok(())
+}
+
+fn function2() -&gt; IoResult&lt;()&gt; {
+    // --snip--
+    Ok(())
+}
+}
+</code></pre>
+
+<p>还可以Re-exporting 通过使用 <code>pub use</code></p>
+
+<pre><code class="language-rust">mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+pub use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+}
+</code></pre>
+
+<p>不是很明白设计了这么多，搞得有点复杂，是不是因为本身问题很多需要引入这么多技术来解决呢？</p>
+
+<p>完！</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://holicc.github.io/2020/07/rust-packages-management/" title="Rust Packages Management" target="_blank" rel="external">https://holicc.github.io/2020/07/rust-packages-management/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/LuLongShan" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://holicc.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/LuLongShan" target="_blank"><span class="text-dark">Joe</span><small class="ml-1x">Hello World</small></a></h3>
+        <div>people are resources</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" title="Rust Enums And Patter Match"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
         </div>
-    </article>
+    </div>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/LuLongShan" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -393,7 +583,7 @@
 
 <script>
     var disqus_config = function () {
-        this.page.url = 'https:\/\/holicc.github.io\/posts\/';
+        this.page.url = 'https:\/\/holicc.github.io\/2020\/07\/rust-packages-management\/';
         this.page.identifier = 'takijoe';
     };
     (function () {

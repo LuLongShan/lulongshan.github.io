@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Rust Packages Management</title>
+      <link>https://holicc.github.io/2020/07/rust-packages-management/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-packages-management/</guid>
+      <description>Rust Packages Crates and Modules 每个新出的编程语言都有一套对应的包管理工具，Rust也不列外，Rust使用的是cargo作为其包管理工具； crate是一个单一的库</description>
+    </item>
+    
+    <item>
       <title>Rust Enums And Patter Match</title>
       <link>https://holicc.github.io/2020/07/rust-enums-and-patter-match/</link>
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
