@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/programing/</link>
     <description>Recent content in programing on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/programing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Function</title>
+      <link>https://holicc.github.io/2020/07/rocketmq-overstock/</link>
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rocketmq-overstock/</guid>
+      <description>RocketMQ服务部署情况介绍 由于项目对消息的可靠性要求比较高所以采用的是SYNC_MASTER+SLAVE的部署方式, 并且使用了ASYN</description>
+    </item>
     
     <item>
       <title>Rust Packages Management</title>
