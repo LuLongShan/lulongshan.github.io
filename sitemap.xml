@@ -4,28 +4,49 @@
   
   <url>
     <loc>https://holicc.github.io/categories/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/tags/programing/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/categories/programing/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/rust/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/2020/07/rust-collections/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -47,20 +68,6 @@
   <url>
     <loc>https://holicc.github.io/2020/07/rocketmq-overstock/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://holicc.github.io/tags/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://holicc.github.io/tags/rust/</loc>
-    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

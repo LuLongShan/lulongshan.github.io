@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/</link>
     <description>Recent content in Tags on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Collections</title>
+      <link>https://holicc.github.io/2020/07/rust-collections/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-collections/</guid>
+      <description>Rust中的集合类型 Rust的标准库中提供了常用的集合类型：Vect(相当于Java中的List)，Map(相当于Java中的Map)，在使</description>
+    </item>
     
     <item>
       <title>Rust Function</title>
