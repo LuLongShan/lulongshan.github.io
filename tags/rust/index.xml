@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/tags/rust/</link>
     <description>Recent content in rust on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust Testing</title>
+      <link>https://holicc.github.io/2020/07/rust-testing/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/07/rust-testing/</guid>
+      <description>Rust单元测试 在Rust中使用测试，相当于在Java中使用@Test注解一样 #[cfg(test)] mod tests { #[test] fn it_works() { assert_eq!(2 + 2, 4); } } 其中#[test]就相当于一个注解</description>
+    </item>
     
     <item>
       <title>About</title>
