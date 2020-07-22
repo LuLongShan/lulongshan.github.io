@@ -17,14 +17,14 @@
   </url>
   
   <url>
-    <loc>https://holicc.github.io/categories/programing/</loc>
+    <loc>https://holicc.github.io/tags/programing/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/programing/</loc>
+    <loc>https://holicc.github.io/categories/programing/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,13 +52,6 @@
   </url>
   
   <url>
-    <loc>https://holicc.github.io/about/</loc>
-    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://holicc.github.io/2020/07/rust-error/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -73,14 +66,14 @@
   </url>
   
   <url>
-    <loc>https://holicc.github.io/categories/rocketmq/</loc>
+    <loc>https://holicc.github.io/tags/rocketmq/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/rocketmq/</loc>
+    <loc>https://holicc.github.io/categories/rocketmq/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -164,14 +157,14 @@
   </url>
   
   <url>
-    <loc>https://holicc.github.io/categories/mysql/</loc>
+    <loc>https://holicc.github.io/tags/mysql/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://holicc.github.io/tags/mysql/</loc>
+    <loc>https://holicc.github.io/categories/mysql/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -215,6 +208,13 @@
   <url>
     <loc>https://holicc.github.io/tags/tcp/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/about/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
