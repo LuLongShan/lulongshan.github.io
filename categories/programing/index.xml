@@ -5,17 +5,26 @@
     <link>https://holicc.github.io/categories/programing/</link>
     <description>Recent content in programing on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/categories/programing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Rust Smart Pointer</title>
-      <link>https://holicc.github.io/2020/07/rust-smart-pointer/</link>
-      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      <title>Powershell Notes</title>
+      <link>https://holicc.github.io/2020/08/powershell-notes/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://holicc.github.io/2020/07/rust-smart-pointer/</guid>
+      <guid>https://holicc.github.io/2020/08/powershell-notes/</guid>
+      <description>查看文件（类似cat的功能） type $file 创建文件： New-Item [path] 使用记事本打开文件 Start-Process notepad $file</description>
+    </item>
+    
+    <item>
+      <title>Rust Smart Pointer</title>
+      <link>https://holicc.github.io/2020/08/rust-smart-pointer/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/08/rust-smart-pointer/</guid>
       <description>Rust Smart Pointer (智能指针) 普通指针（Reference）: &amp;amp; 使用这个定义的，只是指向了对应的内存地址，并没有其他的功能； 智能指针（Smart Poin</description>
     </item>
     
