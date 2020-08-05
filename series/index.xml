@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Rust Concurrency</title>
+      <link>https://holicc.github.io/2020/08/rust-concurrency/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/08/rust-concurrency/</guid>
+      <description>Rust Concurrency Rust中的线程（Thread）使用的是1:1 model而不是像Golang中的goroutine使用的是M:N model； 因为Rust</description>
+    </item>
+    
+    <item>
       <title>Powershell Notes</title>
       <link>https://holicc.github.io/2020/08/powershell-notes/</link>
       <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
