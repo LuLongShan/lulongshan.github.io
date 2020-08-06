@@ -19,12 +19,21 @@
     </item>
     
     <item>
+      <title>Rust Struct</title>
+      <link>https://holicc.github.io/2020/08/rust-features/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/08/rust-features/</guid>
+      <description>Rust Unsafe 使用unsafe的五种特性： Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions Dereferencing a Raw Pointer 定义 raw pointer fn main() { let mut num = 5; let r1 = &amp;amp;num as *const i32; let r2 = &amp;amp;mut num as</description>
+    </item>
+    
+    <item>
       <title>Powershell Notes</title>
       <link>https://holicc.github.io/2020/08/powershell-notes/</link>
       <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holicc.github.io/2020/08/powershell-notes/</guid>
-      <description>查看文件（类似cat的功能） type $file 创建文件： New-Item [path] 使用记事本打开文件 Start-Process notepad $file</description>
+      <description>查看文件（类似cat的功能） type $file 创建文件： New-Item [path] 使用记事本打开文件 Start-Process notepad $file 打开文件夹 ii . 或者 Invoke-Item .</description>
     </item>
     
     <item>
