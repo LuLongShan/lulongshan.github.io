@@ -53,7 +53,7 @@
 <meta itemprop="description" content="Rust中的所有权系统(Ownership) 目前大部分的编程语言管理内存都是使用的：1.自动管理(垃圾回收机制，像Java) 2.手动编码控制">
 <meta itemprop="datePublished" content="2020-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2298">
+<meta itemprop="wordCount" content="2341">
 
 
 
@@ -315,7 +315,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/rust-ownership/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2298words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2341words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 5minutes </span>
       </div>
     </div>
@@ -334,6 +334,8 @@
 <blockquote>
 <p>All data stored on the stack must have a known, fixed size. Data with an unknown size at compile time or a size that might change must be stored on the heap instead</p>
 </blockquote>
+
+<p>编译期间能够知道大小的变量是分配到栈上，无法确定大小的就是分配到堆上。（也不是绝对的）</p>
 
 <p>这个点不知道，记录一下</p>
 
