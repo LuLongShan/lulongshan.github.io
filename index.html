@@ -47,7 +47,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://holicc.github.io/" />
-<meta property="og:updated_time" content="2020-08-05T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-08-17T00:00:00+00:00" />
 <meta itemprop="name" content="Joe">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Joe"/>
@@ -155,7 +155,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://holicc.github.io/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://holicc.github.io/categories/programing/" class="category-list-link">programing</a><span class="category-list-count">16</span></li>
+            <li class="category-list-item"><a href="https://holicc.github.io/categories/programing/" class="category-list-link">programing</a><span class="category-list-count">17</span></li>
             <li class="category-list-item"><a href="https://holicc.github.io/categories/protocol/" class="category-list-link">protocol</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://holicc.github.io/categories/rocketmq/" class="category-list-link">rocketmq</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://holicc.github.io/categories/windows/" class="category-list-link">windows</a><span class="category-list-count">1</span></li>
@@ -185,7 +185,7 @@
             
             
             <li class="tag-list-item"><a href="https://holicc.github.io/tags/programing/" class="tag-list-link">programing</a><span
-                    class="tag-list-count">16</span></li>
+                    class="tag-list-count">17</span></li>
             
             
             <li class="tag-list-item"><a href="https://holicc.github.io/tags/rocketmq/" class="tag-list-link">rocketmq</a><span
@@ -208,6 +208,16 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://holicc.github.io/2020/08/go-code-style/" class="title">Go Code Style</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-08-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -248,16 +258,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://holicc.github.io/2020/07/rust-testing/" class="title">Rust Testing</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-07-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-21</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -273,6 +273,44 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/08/go-code-style/"
+    >Go Code Style</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">Receiver Type Choosing whether to use a value or pointer receiver on methods can be difficult, especially to new Go programmers. If in doubt, use a pointer, but there are times when a value receiver makes sense, usually for reasons of efficiency, such as for small unchanging structs or values of basic type. Some useful guidelines:
+ If the receiver is a map, func or chan, don't use a pointer to them.</div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://holicc.github.io/2020/08/go-code-style/" class="">
+  <time datetime="2020-08-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-17</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/programing/"> programing </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/programing/"> programing </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/08/go-code-style/#comments" class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 417words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -612,44 +650,6 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/07/rust-packages-management/#comments" class="article-comment-link">Comments</a></span>
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 755words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/07/rust-enums-and-patter-match/"
-    >Rust Enums And Patter Match</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">Rust中的枚举 enum枚举类型，一种熟悉的数据结构，在Java中也有对应的类型，就不赘述了. fn main() { enum IpAddrKind { V4, V6, } struct IpAddr { kind: IpAddrKind, address: String, } let home = IpAddr { kind:</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://holicc.github.io/2020/07/rust-enums-and-patter-match/" class="">
-  <time datetime="2020-07-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-09</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/programing/"> programing </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/programing/"> programing </a>
-    <a class="article-tag-link" href="/tags/rust/"> rust </a>
-  </span>
-
-        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/07/rust-enums-and-patter-match/#comments" class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 604words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
       </p>
     </article></div>

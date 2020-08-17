@@ -4,28 +4,42 @@
   
   <url>
     <loc>https://holicc.github.io/categories/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/2020/08/go-code-style/</loc>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://holicc.github.io/categories/programing/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://holicc.github.io/tags/programing/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/categories/programing/</loc>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://holicc.github.io/tags/</loc>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -46,13 +60,6 @@
   
   <url>
     <loc>https://holicc.github.io/2020/08/rust-features/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://holicc.github.io/tags/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
