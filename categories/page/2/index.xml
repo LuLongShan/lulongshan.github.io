@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/categories/</link>
     <description>Recent content in Categories on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 17 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About TCP Protocol</title>
+      <link>https://holicc.github.io/2020/03/about-tcp-protocol/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/03/about-tcp-protocol/</guid>
+      <description>TCP是什么 ? 传输控制协议（TCP）是互联网协议组中重要的组成部分之一。TCP的实现之初是为了补充互联网协议（IP）。因此，这一对组合经常被</description>
+    </item>
     
     <item>
       <title>About</title>
