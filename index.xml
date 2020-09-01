@@ -5,10 +5,19 @@
     <link>https://holicc.github.io/</link>
     <description>Recent content on Joe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://holicc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Code Style</title>
+      <link>https://holicc.github.io/2020/09/go-code-snippet/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/09/go-code-snippet/</guid>
+      <description>goroutine limiter var count int32 resp := make([]*CommandResponse, len(req.Images)) // waitForAllJob := make(chan struct{}, cfg.Server.MaxParallelNum) defer close(waitForAllJob) // for i := 0; i &amp;lt; len(req.Images); i++ { waitForAllJob &amp;lt;- struct{}{} go func(index int, img *model.Image) { response := process(img) resp[index] = response &amp;lt;-waitForAllJob atomic.AddInt32(&amp;amp;count, 1) }(i, &amp;amp;req.Images[i]) } // for int32(len(req.Images)) != count { }  </description>
+    </item>
     
     <item>
       <title>Postgres VS MySQL</title>
@@ -180,15 +189,6 @@
       
       <guid>https://holicc.github.io/2020/07/install-rust-win10/</guid>
       <description>安装Rust 直接到Rust官方网站 找到适合自己系统的安装包exe文件下载进行安装就行了 官方提供win32位和64位的安装版本，不过一般都是6</description>
-    </item>
-    
-    <item>
-      <title>MySQL 索引</title>
-      <link>https://holicc.github.io/2020/03/about-mysql-index/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://holicc.github.io/2020/03/about-mysql-index/</guid>
-      <description>索引是什么 索引（在MySQL中也称为“键（key）”），用于存储引擎快速找到记录的一种数据结构。这是索引的基础功能。 索引可以包含一个列或多个</description>
     </item>
     
   </channel>

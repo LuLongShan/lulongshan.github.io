@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>MySQL 索引</title>
+      <link>https://holicc.github.io/2020/03/about-mysql-index/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://holicc.github.io/2020/03/about-mysql-index/</guid>
+      <description>索引是什么 索引（在MySQL中也称为“键（key）”），用于存储引擎快速找到记录的一种数据结构。这是索引的基础功能。 索引可以包含一个列或多个</description>
+    </item>
+    
+    <item>
       <title>About TCP Protocol</title>
       <link>https://holicc.github.io/2020/03/about-tcp-protocol/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
