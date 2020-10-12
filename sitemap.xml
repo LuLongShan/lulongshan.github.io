@@ -157,6 +157,13 @@
   </url>
   
   <url>
+    <loc>https://holicc.github.io/2020/07/rocketmq-overstock/</loc>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://holicc.github.io/categories/rocketmq/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -165,13 +172,6 @@
   
   <url>
     <loc>https://holicc.github.io/tags/rocketmq/</loc>
-    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://holicc.github.io/2020/07/rocketmq-overstock/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
