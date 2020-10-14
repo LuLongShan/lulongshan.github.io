@@ -15,7 +15,7 @@
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://holicc.github.io/2020/10/principles/</guid>
-      <description>Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that you scale by adding more machines.</description>
+      <description>Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Domain name system Content delivery network Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that</description>
     </item>
     
     <item>

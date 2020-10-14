@@ -23,7 +23,7 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that you scale by adding more machines." />
+  <meta name="description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Domain name system Content delivery network Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that" />
   <meta name="generator" content="Hugo 0.62.2 with theme pure" />
   <title>Common Principles - Joe</title>
   
@@ -44,22 +44,22 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js"
     integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
   <meta property="og:title" content="Common Principles" />
-<meta property="og:description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that you scale by adding more machines." />
+<meta property="og:description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Domain name system Content delivery network Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://holicc.github.io/2020/10/principles/" />
 <meta property="article:published_time" content="2020-10-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-10T00:00:00+00:00" />
 <meta itemprop="name" content="Common Principles">
-<meta itemprop="description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that you scale by adding more machines.">
+<meta itemprop="description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Domain name system Content delivery network Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that">
 <meta itemprop="datePublished" content="2020-10-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="775">
+<meta itemprop="wordCount" content="1010">
 
 
 
 <meta itemprop="keywords" content="system-design," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Common Principles"/>
-<meta name="twitter:description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that you scale by adding more machines."/>
+<meta name="twitter:description" content="Contents Vertical scaling Horizontal scaling Caching Load balancing Database replication Database partitioning CAP theorem Domain name system Content delivery network Vertical scaling Vertical scaling means add more new resources in the existing system to meet the expectation. In other words that you scale by adding more power (CPU, RAM) to an existing machine. Good example of vertical scaling is The cloud version of MySQL Horizontal scaling Horizontal scaling means that"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -332,8 +332,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/10/principles/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 775words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1010words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -347,6 +347,8 @@
 <li><a href="#database-replication">Database replication</a></li>
 <li><a href="#database-partitioning">Database partitioning</a></li>
 <li><a href="#cap-theorem">CAP theorem</a></li>
+<li><a href="#domain-name-system">Domain name system</a></li>
+<li><a href="#content-delivery-network">Content delivery network</a></li>
 </ul>
 
 <h3 id="vertical-scaling">Vertical scaling</h3>
@@ -423,6 +425,24 @@ Two years later, Seth Gilbert and Professor Nancy Lynch - researchers in distrib
 <pre><code>Responses return the most readily available version of the data available on any node, which might not be the latest. Writes might take some time to propagate when the partition is resolved.
 
 AP is a good choice if the business needs allow for eventual consistency or when the system needs to continue working despite external errors.
+</code></pre>
+
+<h3 id="domain-name-system">Domain name system</h3>
+
+<pre><code>DNS is hierarchical, with a few authoritative servers at the top level. Your router or ISP provides information about which DNS server(s) to contact when doing a lookup. Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays. DNS results can also be cached by your browser or OS for a certain period of time, determined by the time to live (TTL).
+</code></pre>
+
+<p><a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197427(v=ws.10)?redirectedfrom=MSDN">more</a></p>
+
+<h3 id="content-delivery-network">Content delivery network</h3>
+
+<pre><code>A CDN helps to speed up static components of your blog (especially pictures of say, your bed in Rome) by distributing them across a number of servers around the world. This does two things – one is to put much of your travel blog’s content closer to the person who wants to view it. So, a person in Japan will download your beautiful photos of Granada from Tokyo, rather than your server sitting in Boston, for example. Less distance traveled means a faster download and secondly, if the content isn’t being pulled directly from your server, it saves overall computing power (important to have plenty of for when traffic gets really busy).    
+</code></pre>
+
+<p>Serving content from CDNs can significantly improve performance in two ways:</p>
+
+<pre><code>- Users receive content from data centers close to them    
+- Your servers do not have to serve requests that the CDN fulfills
 </code></pre>
 
 <h3 id="materials">Materials</h3>
