@@ -1,0 +1,561 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Rust Features - Even - A super concise theme for Hugo</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Joe"><meta name=description content="Rust Unsafe 使用unsafe的五种特性： Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions Dereferencing a Raw Pointer 定义 raw pointer 1 2 3 4 5 6 fn main(){letmutnum=5;letr1=&amp;amp;numas*consti32;letr2=&amp;amp;mutnumas*muti32;} 释放 1 2 3 4 5 6 7 8 9 10 11"><meta name=keywords content="Joe,blog,go,rust,java"><meta name=generator content="Hugo 0.79.1 with theme even"><link rel=canonical href=https://holicc.github.io/post/rust/rust-features/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Rust Features"><meta property="og:description" content="Rust Unsafe 使用unsafe的五种特性： Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions Dereferencing a Raw Pointer 定义 raw pointer 1 2 3 4 5 6 fn main(){letmutnum=5;letr1=&numas*consti32;letr2=&mutnumas*muti32;} 释放 1 2 3 4 5 6 7 8 9 10 11"><meta property="og:type" content="article"><meta property="og:url" content="https://holicc.github.io/post/rust/rust-features/"><meta property="article:published_time" content="2020-08-05T00:00:00+00:00"><meta property="article:modified_time" content="2020-08-05T00:00:00+00:00"><meta itemprop=name content="Rust Features"><meta itemprop=description content="Rust Unsafe 使用unsafe的五种特性： Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions Dereferencing a Raw Pointer 定义 raw pointer 1 2 3 4 5 6 fn main(){letmutnum=5;letr1=&numas*consti32;letr2=&mutnumas*muti32;} 释放 1 2 3 4 5 6 7 8 9 10 11"><meta itemprop=datePublished content="2020-08-05T00:00:00+00:00"><meta itemprop=dateModified content="2020-08-05T00:00:00+00:00"><meta itemprop=wordCount content="1021"><meta itemprop=keywords content="programing,rust,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rust Features"><meta name=twitter:description content="Rust Unsafe 使用unsafe的五种特性： Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions Dereferencing a Raw Pointer 定义 raw pointer 1 2 3 4 5 6 fn main(){letmutnum=5;letr1=&numas*consti32;letr2=&mutnumas*muti32;} 释放 1 2 3 4 5 6 7 8 9 10 11"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Joe</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Joe</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Rust Features</h1><div class=post-meta><span class=post-time>2020-08-05</span><div class=post-category><a href=/categories/programing/>programing</a></div><span class=more-meta>1021 words</span>
+<span class=more-meta>3 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"></div></div><div class=post-content><h2 id=rust-unsafe>Rust Unsafe</h2><p>使用<code>unsafe</code>的五种特性：</p><ul><li>Dereference a raw pointer</li><li>Call an unsafe function or method</li><li>Access or modify a mutable static variable</li><li>Implement an unsafe trait</li><li>Access fields of unions</li></ul><h3 id=dereferencing-a-raw-pointer>Dereferencing a Raw Pointer</h3><p>定义 <code>raw pointer</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>num</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>r1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>&amp;</span><span class=n>num</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=o>*</span><span class=k>const</span><span class=w> </span><span class=kt>i32</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>r2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=n>num</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=o>*</span><span class=k>mut</span><span class=w> </span><span class=kt>i32</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>释放</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>num</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>r1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>&amp;</span><span class=n>num</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=o>*</span><span class=k>const</span><span class=w> </span><span class=kt>i32</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>r2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=n>num</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=o>*</span><span class=k>mut</span><span class=w> </span><span class=kt>i32</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>unsafe</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;r1 is: {}&#34;</span><span class=p>,</span><span class=w> </span><span class=o>*</span><span class=n>r1</span><span class=p>);</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;r2 is: {}&#34;</span><span class=p>,</span><span class=w> </span><span class=o>*</span><span class=n>r2</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><h3 id=calling-an-unsafe-function-or-method>Calling an Unsafe Function or Method</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>slice</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>split_at_mut</span><span class=p>(</span><span class=n>slice</span>: <span class=kp>&amp;</span><span class=nc>mut</span><span class=w> </span><span class=p>[</span><span class=kt>i32</span><span class=p>],</span><span class=w> </span><span class=n>mid</span>: <span class=kt>usize</span><span class=p>)</span><span class=w> </span>-&gt; <span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=p>[</span><span class=kt>i32</span><span class=p>],</span><span class=w> </span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=p>[</span><span class=kt>i32</span><span class=p>])</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>len</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>slice</span><span class=p>.</span><span class=n>len</span><span class=p>();</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>ptr</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>slice</span><span class=p>.</span><span class=n>as_mut_ptr</span><span class=p>();</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=n>assert</span><span class=o>!</span><span class=p>(</span><span class=n>mid</span><span class=w> </span><span class=o>&lt;=</span><span class=w> </span><span class=n>len</span><span class=p>);</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>unsafe</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=p>(</span><span class=w>
+</span><span class=w>            </span><span class=n>slice</span>::<span class=n>from_raw_parts_mut</span><span class=p>(</span><span class=n>ptr</span><span class=p>,</span><span class=w> </span><span class=n>mid</span><span class=p>),</span><span class=w>
+</span><span class=w>            </span><span class=n>slice</span>::<span class=n>from_raw_parts_mut</span><span class=p>(</span><span class=n>ptr</span><span class=p>.</span><span class=n>add</span><span class=p>(</span><span class=n>mid</span><span class=p>),</span><span class=w> </span><span class=n>len</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>mid</span><span class=p>),</span><span class=w>
+</span><span class=w>        </span><span class=p>)</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>vector</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>vec</span><span class=o>!</span><span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=w> </span><span class=mi>2</span><span class=p>,</span><span class=w> </span><span class=mi>3</span><span class=p>,</span><span class=w> </span><span class=mi>4</span><span class=p>,</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w> </span><span class=mi>6</span><span class=p>];</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=p>(</span><span class=n>left</span><span class=p>,</span><span class=w> </span><span class=n>right</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>split_at_mut</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=n>vector</span><span class=p>,</span><span class=w> </span><span class=mi>3</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>FFI（<em>Foreign Function Interface</em>）特性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>extern</span><span class=w> </span><span class=s>&#34;C&#34;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>abs</span><span class=p>(</span><span class=n>input</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>unsafe</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;Absolute value of -3 according to C: {}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>abs</span><span class=p>(</span><span class=o>-</span><span class=mi>3</span><span class=p>));</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><h3 id=accessing-or-modifying-a-mutable-static-variable>Accessing or Modifying a Mutable Static Variable</h3><p>修改静态变量</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>static</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>COUNTER</span>: <span class=kt>u32</span> <span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>add_to_count</span><span class=p>(</span><span class=n>inc</span>: <span class=kt>u32</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>unsafe</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>COUNTER</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=n>inc</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>add_to_count</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>unsafe</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;COUNTER: {}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>COUNTER</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><h3 id=advanced-traits>Advanced Traits</h3><p>类型参数（特质中定义类型别名）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>struct</span> <span class=nc>Counter</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>count</span>: <span class=kt>u32</span><span class=p>,</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Counter</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>new</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nc>Counter</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>Counter</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>count</span>: <span class=mi>0</span><span class=w> </span><span class=p>}</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=nb>Iterator</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Counter</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>type</span> <span class=nc>Item</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kt>u32</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>next</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=bp>self</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>Option</span><span class=o>&lt;</span><span class=n>Self</span>::<span class=n>Item</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=c1>// --snip--
+</span><span class=c1></span><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=bp>self</span><span class=p>.</span><span class=n>count</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=mi>5</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>            </span><span class=bp>self</span><span class=p>.</span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
+</span><span class=w>            </span><span class=nb>Some</span><span class=p>(</span><span class=bp>self</span><span class=p>.</span><span class=n>count</span><span class=p>)</span><span class=w>
+</span><span class=w>        </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>            </span><span class=nb>None</span><span class=w>
+</span><span class=w>        </span><span class=p>}</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>没看懂，（与泛型的区别） - -|</p><blockquote><p>The difference is that when using generics, as in Listing 19-13, we must annotate the types in each implementation; because we can also implement Iterator<string> for Counter or any other type, we could have multiple implementations of Iterator for Counter. In other words, when a trait has a generic parameter, it can be implemented for a type multiple times, changing the concrete types of the generic type parameters each time. When we use the next method on Counter, we would have to provide type annotations to indicate which implementation of Iterator we want to use.
+With associated types, we don’t need to annotate types because we can’t implement a trait on a type multiple times. In Listing 19-12 with the definition that uses associated types, we can only choose what the type of Item will be once, because there can only be one impl Iterator for Counter. We don’t have to specify that we want an iterator of u32 values everywhere that we call next on Counter.</p></blockquote><p>操作符重载</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>ops</span>::<span class=n>Add</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=cp>#[derive(Debug, PartialEq)]</span><span class=w>
+</span><span class=w></span><span class=k>struct</span> <span class=nc>Point</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>x</span>: <span class=kt>i32</span><span class=p>,</span><span class=w>
+</span><span class=w>    </span><span class=n>y</span>: <span class=kt>i32</span><span class=p>,</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Add</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Point</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>type</span> <span class=nc>Output</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Point</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>add</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>other</span>: <span class=nc>Point</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nc>Point</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>Point</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>            </span><span class=n>x</span>: <span class=nc>self</span><span class=p>.</span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>other</span><span class=p>.</span><span class=n>x</span><span class=p>,</span><span class=w>
+</span><span class=w>            </span><span class=n>y</span>: <span class=nc>self</span><span class=p>.</span><span class=n>y</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>other</span><span class=p>.</span><span class=n>y</span><span class=p>,</span><span class=w>
+</span><span class=w>        </span><span class=p>}</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>assert_eq</span><span class=o>!</span><span class=p>(</span><span class=w>
+</span><span class=w>        </span><span class=n>Point</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>x</span>: <span class=mi>1</span><span class=p>,</span><span class=w> </span><span class=n>y</span>: <span class=mi>0</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>Point</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>x</span>: <span class=mi>2</span><span class=p>,</span><span class=w> </span><span class=n>y</span>: <span class=mi>3</span><span class=w> </span><span class=p>},</span><span class=w>
+</span><span class=w>        </span><span class=n>Point</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>x</span>: <span class=mi>3</span><span class=p>,</span><span class=w> </span><span class=n>y</span>: <span class=mi>3</span><span class=w> </span><span class=p>}</span><span class=w>
+</span><span class=w>    </span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>泛型参数的默认值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=cp>#![allow(unused_variables)]</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w></span><span class=k>trait</span><span class=w> </span><span class=n>Add</span><span class=o>&lt;</span><span class=n>RHS</span><span class=o>=</span><span class=n>Self</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>type</span> <span class=nc>Output</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>add</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>rhs</span>: <span class=nc>RHS</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nc>Self</span>::<span class=n>Output</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>同名方法</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>trait</span><span class=w> </span><span class=n>Pilot</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>trait</span><span class=w> </span><span class=n>Wizard</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>struct</span> <span class=nc>Human</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Pilot</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;This is your captain speaking.&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Wizard</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;Up!&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;*waving arms furiously*&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>person</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Human</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=c1>//will call Human&#39;s fly method directly
+</span><span class=c1></span><span class=w>    </span><span class=n>person</span><span class=p>.</span><span class=n>fly</span><span class=p>();</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>调用同名方法</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>trait</span><span class=w> </span><span class=n>Pilot</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>trait</span><span class=w> </span><span class=n>Wizard</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>struct</span> <span class=nc>Human</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Pilot</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;This is your captain speaking.&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Wizard</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;Up!&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Human</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;*waving arms furiously*&#34;</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>person</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Human</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=n>Pilot</span>::<span class=n>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=n>person</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=n>Wizard</span>::<span class=n>fly</span><span class=p>(</span><span class=o>&amp;</span><span class=n>person</span><span class=p>);</span><span class=w>
+</span><span class=w>    </span><span class=n>person</span><span class=p>.</span><span class=n>fly</span><span class=p>();</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>全限定名调用
+格式：<code>&lt;Type as Trait>::function(receiver_if_method, next_arg, ...);</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>trait</span><span class=w> </span><span class=n>Animal</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>baby_name</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>String</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>struct</span> <span class=nc>Dog</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Dog</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>baby_name</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>String</span> <span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=s>&#34;Spot&#34;</span><span class=p>)</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>impl</span><span class=w> </span><span class=n>Animal</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Dog</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>baby_name</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>String</span> <span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=s>&#34;puppy&#34;</span><span class=p>)</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;A baby dog is called a {}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>Dog</span>::<span class=n>baby_name</span><span class=p>());</span><span class=w>
+</span><span class=w>    </span><span class=c1>// println!(&#34;A baby dog is called a {}&#34;, Animal::baby_name()); not work rust doesn&#39;t known which implement is 
+</span><span class=c1></span><span class=w>    </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;A baby dog is called a {}&#34;</span><span class=p>,</span><span class=w> </span><span class=o>&lt;</span><span class=n>Dog</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=n>Animal</span><span class=o>&gt;</span>::<span class=n>baby_name</span><span class=p>());</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><h3 id=advanced-types>Advanced Types</h3><p>类型别名</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>type</span> <span class=nc>Thunk</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Box</span><span class=o>&lt;</span><span class=n>dyn</span><span class=w> </span><span class=nb>Fn</span><span class=p>()</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=nb>Send</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=nb>&#39;static</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>f</span>: <span class=nc>Thunk</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Box</span>::<span class=n>new</span><span class=p>(</span><span class=o>||</span><span class=w> </span><span class=n>println</span><span class=o>!</span><span class=p>(</span><span class=s>&#34;hi&#34;</span><span class=p>));</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>takes_long_type</span><span class=p>(</span><span class=n>f</span>: <span class=nc>Thunk</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=c1>// --snip--
+</span><span class=c1></span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>returns_long_type</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nc>Thunk</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=c1>// --snip--
+</span><span class=c1></span><span class=w>        </span><span class=nb>Box</span>::<span class=n>new</span><span class=p>(</span><span class=o>||</span><span class=w> </span><span class=p>())</span><span class=w>
+</span><span class=w>    </span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>还支持泛型</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fmt</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>type</span> <span class=nb>Result</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>std</span>::<span class=n>result</span>::<span class=nb>Result</span><span class=o>&lt;</span><span class=n>T</span><span class=p>,</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=n>Error</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>trait</span><span class=w> </span><span class=n>Write</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>write</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>buf</span>: <span class=kp>&amp;</span><span class=p>[</span><span class=kt>u8</span><span class=p>])</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>usize</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>flush</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=bp>self</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>()</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>write_all</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>buf</span>: <span class=kp>&amp;</span><span class=p>[</span><span class=kt>u8</span><span class=p>])</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>()</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w>    </span><span class=k>fn</span> <span class=nf>write_fmt</span><span class=p>(</span><span class=o>&amp;</span><span class=k>mut</span><span class=w> </span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>fmt</span>: <span class=nc>fmt</span>::<span class=n>Arguments</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>()</span><span class=o>&gt;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>如何返回闭包函数？ Box Everything</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=cp>#![allow(unused_variables)]</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>returns_closure</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Box</span><span class=o>&lt;</span><span class=n>dyn</span><span class=w> </span><span class=nb>Fn</span><span class=p>(</span><span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=nb>Box</span>::<span class=n>new</span><span class=p>(</span><span class=o>|</span><span class=n>x</span><span class=o>|</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=p>)</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><h3 id=macros>Macros</h3><p>使用<code>macro_rules!</code>定义宏</p><p>规则如下：</p><ul><li>Custom #[derive] macros that specify code added with the derive attribute used on structs and enums</li><li>Attribute-like macros that define custom attributes usable on any item</li><li>Function-like macros that look like function calls but operate on the tokens specified as their argument</li></ul><p>宏的作用：</p><blockquote><p>macros are a way of writing code that writes other code, which is known as metaprogramming</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=cp>#![allow(unused_variables)]</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w></span><span class=cp>#[macro_export]</span><span class=w>
+</span><span class=w></span><span class=n>macro_rules</span><span class=o>!</span><span class=w> </span><span class=n>vec</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=p>(</span><span class=w> </span><span class=cp>$(</span><span class=w> </span><span class=cp>$x</span>:<span class=nc>expr</span><span class=w> </span><span class=p>),</span><span class=o>*</span><span class=w> </span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>        </span><span class=p>{</span><span class=w>
+</span><span class=w>            </span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>temp_vec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Vec</span>::<span class=n>new</span><span class=p>();</span><span class=w>
+</span><span class=w>            </span><span class=cp>$(</span><span class=w>
+</span><span class=w>                </span><span class=n>temp_vec</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=cp>$x</span><span class=p>);</span><span class=w>
+</span><span class=w>            </span><span class=p>)</span><span class=o>*</span><span class=w>
+</span><span class=w>            </span><span class=n>temp_vec</span><span class=w>
+</span><span class=w>        </span><span class=p>}</span><span class=w>
+</span><span class=w>    </span><span class=p>};</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p><code>#[macro_export]</code>用来供外部使用定义的宏</p><p>宏写起来就像是再写AST和正则表达式，<code>$n:expr</code>用来匹配任意表达式 <code>$(,)?</code>相当于匹配<em>逗号</em>是否出现；</p><p><em>procedural macros</em>过程宏(太复杂以后遇到了在研究)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>use</span><span class=w> </span><span class=n>proc_macro</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=cp>#[some_attribute]</span><span class=w>
+</span><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>some_name</span><span class=p>(</span><span class=n>input</span>: <span class=nc>TokenStream</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nc>TokenStream</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>Rust版注解</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-rust data-lang=rust><span class=k>use</span><span class=w> </span><span class=n>proc_macro</span>::<span class=n>TokenStream</span><span class=p>;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=cp>#[route(GET,</span><span class=s>&#34;/&#34;</span><span class=cp>)]</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>index</span><span class=p>(){}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span><span class=w>    </span><span class=n>index</span><span class=p>();</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=cp>#[proc_macro_attribute]</span><span class=w>
+</span><span class=w></span><span class=k>fn</span> <span class=nf>route</span><span class=p>(</span><span class=n>attr</span>:<span class=nc>TokenStream</span><span class=p>,</span><span class=n>item</span>:<span class=nc>TokenStream</span><span class=p>)</span>-&gt;<span class=nc>TokenStream</span><span class=p>{</span><span class=w>
+</span><span class=w></span><span class=p>}</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>完!</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Joe</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2020-08-05</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/programing/>programing</a>
+<a href=/tags/rust/>rust</a></div><nav class=post-nav><a class=prev href=/post/rust/rust-concurrency/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Rust Concurrency</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/shell/powershell-notes/><span class="next-text nav-default">Powershell Notes</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:your@email.com class="iconfont icon-email" title=email></a><a href=http://localhost:1313 class="iconfont icon-stack-overflow" title=stack-overflow></a><a href=http://localhost:1313 class="iconfont icon-twitter" title=twitter></a><a href=http://localhost:1313 class="iconfont icon-facebook" title=facebook></a><a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a><a href=http://localhost:1313 class="iconfont icon-google" title=google></a><a href=http://localhost:1313 class="iconfont icon-github" title=github></a><a href=http://localhost:1313 class="iconfont icon-weibo" title=weibo></a><a href=http://localhost:1313 class="iconfont icon-zhihu" title=zhihu></a><a href=http://localhost:1313 class="iconfont icon-douban" title=douban></a><a href=http://localhost:1313 class="iconfont icon-pocket" title=pocket></a><a href=http://localhost:1313 class="iconfont icon-tumblr" title=tumblr></a><a href=http://localhost:1313 class="iconfont icon-instagram" title=instagram></a><a href=http://localhost:1313 class="iconfont icon-gitlab" title=gitlab></a><a href=http://localhost:1313 class="iconfont icon-bilibili" title=bilibili></a><a href=https://holicc.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020<span class=heart><i class="iconfont icon-heart"></i></span><span>Joe</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js></script></body></html>

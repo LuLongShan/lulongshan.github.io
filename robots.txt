@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://holicc.github.io/sitemap.xml

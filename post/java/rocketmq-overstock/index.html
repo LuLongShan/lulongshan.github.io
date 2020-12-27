@@ -1,0 +1,65 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>RocketMQ - Even - A super concise theme for Hugo</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Joe"><meta name=description content="RocketMQ服务部署情况介绍 由于项目对消息的可靠性要求比较高所以采用的是SYNC_MASTER+SLAVE的部署方式, 并且使用了ASYN"><meta name=keywords content="Joe,blog,go,rust,java"><meta name=generator content="Hugo 0.79.1 with theme even"><link rel=canonical href=https://holicc.github.io/post/java/rocketmq-overstock/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="RocketMQ"><meta property="og:description" content="RocketMQ服务部署情况介绍 由于项目对消息的可靠性要求比较高所以采用的是SYNC_MASTER+SLAVE的部署方式, 并且使用了ASYN"><meta property="og:type" content="article"><meta property="og:url" content="https://holicc.github.io/post/java/rocketmq-overstock/"><meta property="article:published_time" content="2020-07-12T00:00:00+00:00"><meta property="article:modified_time" content="2020-07-12T00:00:00+00:00"><meta itemprop=name content="RocketMQ"><meta itemprop=description content="RocketMQ服务部署情况介绍 由于项目对消息的可靠性要求比较高所以采用的是SYNC_MASTER+SLAVE的部署方式, 并且使用了ASYN"><meta itemprop=datePublished content="2020-07-12T00:00:00+00:00"><meta itemprop=dateModified content="2020-07-12T00:00:00+00:00"><meta itemprop=wordCount content="1095"><meta itemprop=keywords content="programing,rocketMQ,"><meta name=twitter:card content="summary"><meta name=twitter:title content="RocketMQ"><meta name=twitter:description content="RocketMQ服务部署情况介绍 由于项目对消息的可靠性要求比较高所以采用的是SYNC_MASTER+SLAVE的部署方式, 并且使用了ASYN"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Joe</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Joe</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>RocketMQ</h1><div class=post-meta><span class=post-time>2020-07-12</span><div class=post-category><a href=/categories/programing/>programing</a>
+<a href=/categories/rocketmq/>rocketMQ</a></div><span class=more-meta>1095 words</span>
+<span class=more-meta>3 mins read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"></div></div><div class=post-content><h2 id=rocketmq服务部署情况介绍>RocketMQ服务部署情况介绍</h2><p>由于项目对消息的可靠性要求比较高所以采用的是<strong>SYNC_MASTER+SLAVE</strong>的部署方式,
+并且使用了<strong>ASYNC_FLUSH（同步刷新）</strong>机制，虽然Master节点宕机的时候会丢失一部分的消息数据，但是性能上是很大的提升；</p><p>根据官方说明的优缺点：</p><ul><li>优点：数据与服务都无单点故障，Master宕机情况下，消息无延迟，服务可用性与数据可用性都非常高；</li><li>缺点：性能比异步复制模式略低（大约低10%左右），发送单个消息的RT会略高，且目前版本在主节点宕机后，备机不能自动切换为主机（针对4.5以前的版本）。</li></ul><p>由于我们使用的是<code>4.7.0</code>版本已经使用了<strong>raft 协议</strong>解决了这个问题。如果要使集群能够自动容灾切换，需要至少三台机器</p><p>我们一共有4台机器，每台机器的配置：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>32g内存，2T的硬盘，8核CPU</code></pre></td></tr></table></div></div><p>一台机器作为nameserver，其余都是broker，broker之间可以进行自动选举master节点</p><p>部署情况：</p><p><figure><img src=rocketmq-cluster.png alt=rocketmq-cluster></figure></p><p>配置文件编写情况：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>#所属集群名字
+brokerClusterName=RaftCluster
+brokerName=RaftNode00
+## 启用DLeger
+enableDLegerCommitLog=true
+dLegerGroup=RaftNode00
+dLegerPeers=n0-127.0.0.1:40911;n1-127.0.0.1:40912;n2-127.0.0.1:40913
+dLegerSelfId=n0
+#0 表示 Master，&gt;0 表示 Slave
+brokerId=0
+#nameServer地址，分号分割
+namesrvAddr=rocketmq-nameserver-0:9876
+autoCreateTopicEnable=false
+autoCreateSubscriptionGroup=false
+#Broker 对外服务的监听端口，10911为默认值
+listenPort=10911
+#表示Master监听Slave请求的端口,默认为服务端口+1
+haListenPort=10912
+#- SLAVE
+brokerRole=ASYNC_MASTER
+#刷盘方式
+flushDiskType=ASYNC_FLUSH</code></pre></td></tr></table></div></div><h2 id=rocketmq消费端设置情况>RocketMQ消费端设置情况</h2><p>Consumer使用的是公司封装的所以能够配置的参数有限，通过阅读封装的代码发现，</p><p><code>consumeMessageBatchMaxSize=10</code>一批次可以处理10条数据
+<code>setConsumeThreadMin=3</code>后面修改为了CPU核心数
+<code>setConsumeThreadMax=3</code>后面修改为了CPU核心数
+<code>setMessageModel=MessageModel.CLUSTERING</code> 集群模式
+<code>setConsumeFromWhere=ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET</code> 接着上次消费的进度开始消费</p><p>其余的参数都没有进行改动</p><h2 id=rocketmq消息堆积了如何解决>RocketMQ消息堆积了如何解决</h2><p>原因：消费服务太慢导致消息堆积；</p><p>这里的堆积指的是Consumer拉取的消息消费不过来了导致的堆积</p><p>我们的系统中使用的是PUSH的消费模式，本质上是使用PULL不断的向Broker拉取消息机制的封装。</p><p>解决办法：</p><ul><li>先修复 consumer 的问题，确保其恢复消费速度，然后将现有 consumer 都停掉。（因为历史数据积压太多，短时间内无法消费完）</li><li>建立新的topic，临时建立好原先 10 倍的 queue 数量。</li><li>然后写一个临时的分发数据的 consumer 程序，这个程序部署上去消费积压的数据，消费之后不做耗时的处理，直接均匀轮询写入临时建立好的 10 倍数量的 queue</li><li>接着临时征扩容机器机器来部署 consumer，每一批 consumer 消费一个临时 queue 的数据。</li><li>等快速消费完积压数据之后，得恢复原先部署的架构，重新用原先的 consumer 机器来消费消息。</li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Joe</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2020-07-12</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/programing/>programing</a>
+<a href=/tags/rocketmq/>rocketMQ</a></div><nav class=post-nav><a class=prev href=/post/rust/rust-collections/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Rust Collections</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/rust/rust-packages-management/><span class="next-text nav-default">Rust Packages Management</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:your@email.com class="iconfont icon-email" title=email></a><a href=http://localhost:1313 class="iconfont icon-stack-overflow" title=stack-overflow></a><a href=http://localhost:1313 class="iconfont icon-twitter" title=twitter></a><a href=http://localhost:1313 class="iconfont icon-facebook" title=facebook></a><a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a><a href=http://localhost:1313 class="iconfont icon-google" title=google></a><a href=http://localhost:1313 class="iconfont icon-github" title=github></a><a href=http://localhost:1313 class="iconfont icon-weibo" title=weibo></a><a href=http://localhost:1313 class="iconfont icon-zhihu" title=zhihu></a><a href=http://localhost:1313 class="iconfont icon-douban" title=douban></a><a href=http://localhost:1313 class="iconfont icon-pocket" title=pocket></a><a href=http://localhost:1313 class="iconfont icon-tumblr" title=tumblr></a><a href=http://localhost:1313 class="iconfont icon-instagram" title=instagram></a><a href=http://localhost:1313 class="iconfont icon-gitlab" title=gitlab></a><a href=http://localhost:1313 class="iconfont icon-bilibili" title=bilibili></a><a href=https://holicc.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020<span class=heart><i class="iconfont icon-heart"></i></span><span>Joe</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js></script></body></html>
