@@ -154,8 +154,8 @@
 		<span class=o>...</span>
 <span class=p>}</span></code></pre></td></tr></table></div></div><p><strong>以上只是触发的一种方式</strong></p><ol><li>调用 runtime.timeSleepUntil 函数获取计时器的到期时间以及持有该计时器的堆；</li><li>如果超过 10ms 的时间没有轮询，调用 runtime.netpoll 轮询网络；</li><li>如果当前有应该运行的计时器没有执行，可能因为存在无法被抢占的处理器，这时我们应该系统新的线程计时器；</li></ol><p>标准库中的计时器在大多数情况下是能够正常工作并且高效完成任务的，但是在遇到极端情况或者性能敏感场景时，它可能没有办法胜任，<strong>而在 10ms 的这个粒度下</strong>，作者在社区中也没有找到能够使用的计时器实现，一些使用时间轮算法的开源库也不能很好地完成这个任务。</p><h3 id=reference>Reference</h3><ul><li><a href=https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-timer/#63-计时器>计时器</a></li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>Joe</span></p><p class=copyright-item><span class=item-title>LastMod</span>
-<span class=item-content>2020-12-10</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/programing/>programing</a></div><nav class=post-nav><a class=prev href=/post/guitar/roadmap/><i class="iconfont icon-left"></i>
-<span class="prev-text nav-default">Guitar Roadmap</span>
+<span class=item-content>2020-12-10</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/programing/>programing</a></div><nav class=post-nav><a class=prev href=/post/shell/process/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">Fork And Exec</span>
 <span class="prev-text nav-mobile">Prev</span></a>
 <a class=next href=/post/system-design/principles/><span class="next-text nav-default">Common Principles</span>
 <span class="next-text nav-mobile">Next</span>
